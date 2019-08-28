@@ -16,6 +16,9 @@
  import ddf.minim.analysis.*;
  import ddf.minim.effects.*;
  
+ 
+ int currentwave;
+ 
  int windowLength = 500;
  int windowHeight = 400;
  int paddleWidth;
@@ -129,6 +132,8 @@ void draw(){
   
   paddleHeight += finalAlphaAverage /5; //finalAlphaAverage ranges from about 0 to 200 now,
                                            //we want that to cover window of 0 to 300
+  currentwave = finalAlphaAverage /5;                                         
+                                           
   //make sure the paddle doesn't go off-screen
   if (paddleHeight > height - paddleLength)
     paddleHeight = height - paddleLength;
